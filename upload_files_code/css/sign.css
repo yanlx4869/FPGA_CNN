@@ -1,0 +1,276 @@
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-image: url(../jpg/5.jpg);
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 1000px;
+        z-index: -10;
+        zoom: 1;
+        background-color: #fff;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center 0;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .cavs {
+        z-index: 1;
+        position: fixed;
+        width: 95%;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .loginmain {
+        background: rgba(0, 0, 0, 0.5);
+        width: 300px;
+        height: 240px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        padding: 100px 40px 40px 40px;
+        box-shadow: -15px 15px 15px rgba(6, 17, 47, 0.7);
+        z-index: 99999;
+    }
+    
+    .login-title {
+        color: #f0edf3;
+        height: 60px;
+        font-size: 30px;
+        text-align: center;
+        margin-top: -20px;
+    }
+    
+    .login-con {
+        height: 208px;
+        position: absolute;
+        left: 0;
+        width: 80%;
+        margin: 0 10%;
+    }
+    
+    .login-user {
+        position: relative;
+    }
+    
+    .icon {
+        position: absolute;
+        z-index: 1;
+        left: 36px;
+        top: 8px;
+        opacity: 1;
+    }
+    
+    .login-con input {
+        width: calc(100% - 130px);
+        margin-top: -2px;
+        background: rgba(57, 61, 82, 0);
+        left: 0;
+        padding: 10px 65px;
+        border-top: 1px solid rgba(212, 212, 212, 0.37);
+        border-bottom: 1px solid rgba(212, 212, 212, 0.37);
+        border-right: 1px solid rgba(212, 212, 212, 0.37);
+        border-left: 1px solid rgba(212, 212, 212, 0.37);
+        outline: none;
+        font-family: 'Gudea', sans-serif;
+        box-shadow: none;
+        color: #61BFFF !important;
+    }
+    
+    .login-pwd {
+        position: relative;
+    }
+    /*
+.login-pwd .icon{
+    position: absolute;
+    z-index: 1;
+    left: 36px;
+    top: 8px;
+    opacity: .5;
+}*/
+    
+    .login-btn {
+        width: 45%;
+        margin: 0 auto;
+        position: relative;
+        float: left;
+    }
+    
+    .login-btn input {
+        border-radius: 3px;
+        background: transparent;
+        border: 2px solid #4FA1D9;
+        color: #4FA1D9;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        position: absolute;
+        top: 50px;
+        left: 30px;
+        right: 0;
+        transition-property: background, color;
+        -webkit-transition-duration: .2s;
+        transition-duration: .2s;
+        padding-left: 40px;
+    }
+    
+    .login-btn input:hover {
+        color: white !important;
+        background: #4FA1D9;
+        cursor: pointer;
+        -webkit-transition-property: background, color;
+        transition-property: background, color;
+        -webkit-transition-duration: .2s;
+        transition-duration: .2s;
+    }
+    
+    .login-btn2 {
+        width: 45%;
+        margin: 0 auto;
+        position: relative;
+        float: right;
+    }
+    
+    .login-btn2 input {
+        border-radius: 3px;
+        background: transparent;
+        border: 2px solid #4FA1D9;
+        color: #4FA1D9;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        left: 0;
+        margin: auto;
+        transition-property: background, color;
+        -webkit-transition-duration: .2s;
+        transition-duration: .2s;
+        padding-left: 40px;
+    }
+    
+    .login-btn2 input:hover {
+        color: white !important;
+        background: #4FA1D9;
+        cursor: pointer;
+        -webkit-transition-property: background, color;
+        transition-property: background, color;
+        -webkit-transition-duration: .2s;
+        transition-duration: .2s;
+    }
+    
+    a .menu a:hover {
+        color: rgb(14, 194, 218);
+    }
+    
+    .all {
+        width: 100%;
+        height: 1600px;
+    }
+    
+    .menu {
+        width: 100%;
+        height: 80px;
+        text-align: center;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        margin: 0 auto;
+        z-index: 99999;
+        opacity: 1;
+        background-color: white;
+    }
+    
+    .left1 {
+        height: 80px;
+        float: left;
+        margin-left: 50px;
+    }
+    
+    .left1 ul li {
+        padding: 0px 20px;
+        float: left;
+        list-style: none;
+    }
+    
+    .left1 ul li a {
+        text-decoration: none;
+        color: rgb(35, 37, 39);
+        font-size: 25px;
+        line-height: 80px;
+        width: 140px;
+        font-family: STXingkai;
+    }
+    
+    .right1 {
+        height: 80px;
+        float: right;
+        margin: 80px;
+        display: flex;
+        margin-top: 25px;
+    }
+    
+    .right1 ul li {
+        padding: 0px 15px;
+        float: right;
+        list-style: none;
+    }
+    
+    .right1 a {
+        text-decoration: none;
+        color: rgb(35, 37, 39);
+        font-size: 20px;
+        width: 80px;
+    }
+    
+    .right1 input {
+        float: left;
+        flex: 4;
+        height: 30px;
+        outline: none;
+        border: 1px solid rgb(40, 40, 40);
+        box-sizing: border-box;
+        padding-left: 10px;
+    }
+    
+    .right1 button {
+        float: right;
+        flex: 1;
+        height: 30px;
+        width: 35px;
+        background-color: #282828;
+        color: white;
+        border-style: none;
+        outline: none;
+        cursor: pointer;
+    }
+    
+    .right1 button i {
+        font-style: normal;
+    }
+    
+    .right1 button:hover {
+        background-color: rgb(152, 231, 255);
+    }
