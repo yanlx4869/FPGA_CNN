@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据上传</title>
+    <link rel="icon" href="../jpg/ram.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="">
+    <link rel="stylesheet" href="../css/demo.css" type="text/css">
+    <link href="../css/bootstrap1.css" rel="stylesheet" type="text/css" media="all">
+    <link href="../css/bolg.css" rel="stylesheet" type="text/css" media="all" />
+<style>
+    h1{
+        position: absolute;
+        top: 100px;
+        left:450px;
+
+    }
+    </style>
+    <style type="text/css">
+        #area{width:30%;height: 150px; line-height: 150px; text-align: center; border: 1px solid #DDDDDD; position:relative; top: 180px;left:400px; }
+        #prev{width:40%;min-height: 150px; position: absolute; top: 180px;;left:400px}
+    </style>
+    <style>
+        main{
+            position: absolute;
+            top: 600px;
+        }
+        </style>
+       <style>
+        .instructors{
+            position: relative;
+            top:700px;
+        }
+       </style>
+
+
+</head>
+
+<body>
+
+    <div class="menu">
+        <div class="left">
+            <ul>
+                <li><img src="../jpg/demo3.png"></li>
+                <li><a href="../index.html">首页</a></li>
+                <li>
+                    <a href="#">数据上传</a>
+                </li>
+                <li>
+                    <a href="../webs/fun.html">娱乐</a>
+                </li>
+                <li><a href="../webs/record.html">留言</a></li>
+                <li><a href="../webs/resume.html">个人中心</a></li>
+
+            </ul>
+
+        </div>
+        <div class="right">
+            <ul>
+
+                <li>
+                    <a href="../webs/set.html" target="_blank"> <img src="../jpg/set.png" width="30px" height="30px"></a>
+                </li>
+                <li>
+                    <a href="../webs/sign.html" target="_blank">
+                        <img src="../jpg/logon.png" width="30px" height="30px">
+                    </a>
+                </li>
+                <li>
+                    <input type="text" placeholder="请输入..." name="" id="" value="" style="border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;" />&nbsp;&nbsp;
+                    <a href="../webs/find.html" target="_blank"><button style="border-top-left-radius: 12px;
+                    border-top-right-radius: 12px;
+                    border-bottom-left-radius: 12px;
+                    border-bottom-right-radius: 12px;">搜</button>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+<div class="main">
+    <div class="tupian">
+    <h1>请在下方区域上传图片</h1>
+    <div class="tuo">
+    <div id="area">将图片拖放到该区域</div>
+    <input type="file" id="selectFiles" onchange="dealSelectFiles()" >
+    <canvas id="myCanvas" width=1440 height=500 ></canvas>
+    <body>
+        
+        <div id="prev"></div>
+    </body>
+
+  <script>
+    window.onload = function(){
+        var oArea = document.getElementById("area");
+        var oPrev = document.getElementById("prev");
+        
+        oArea.ondragenter = function(){
+            oArea.innerHTML = "请释放鼠标";
+        }
+        oArea.ondragleave = function(){
+            oArea.innerHTML = "将图片拖放到该区域";
+        }
+        oArea.ondragover = function(ev){
+            ev.preventDefault();
+        }
+        oArea.ondrop = function(ev){
+            ev.preventDefault();
+            var files = ev.dataTransfer.files;
+            for(var i = 0 , len = files.length;i<len;i++){
+                var file = files[i];
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                (function(reader){
+                    reader.onload = function(){
+                        var oImg = document.createElement("img");
+                        oImg.src = this.result;
+                        oPrev.appendChild(oImg);
+                    }
+                })(reader);
+                
+            }
+            
+        }
+        
+    }
+  </script>
+</div>
+
+
+    <!-- multiple 一个文件选择框可以同时选择多个文件
+      <input type="file" id="selectFiles" onchange="dealSelectFiles()" multiple webkitdirectory> 
+    --> 
+    <div class="chuan">
+    <script>
+        var imgPosX = 0;
+        var imgWidth = 100;
+        function dealSelectFiles(){
+            // get select files.
+            var selectFiles = document.getElementById("selectFiles").files;
+  
+            for(var file of selectFiles){
+                console.log(file.webkitRelativePath);
+                // read file content.
+                var reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function(){
+                    // deal data.
+                    var img = new Image();
+                    // after loader, result storage the file content result.
+                    img.src = this.result;  
+                    img.onload = function(){
+                        var prev = document.getElementById("myCanvas");
+                        var cxt = prev.getContext('2d');
+                        cxt.drawImage(img, imgPosX, 0);
+                        imgPosX += imgWidth;
+                    }
+                }
+            }
+        }
+    </script>
+    </div>
+</div>
+
+    
+        
+        
+    <!-- header -->
+    <!-- instructors -->
+    <div class="instructors">
+        <div class="container">
+            <div class="col-md-4 instru-left">
+                <h3>随笔</h3>
+                <div class="inst-top">
+                    <div class="ins-lef">
+                        <img src="../jpg/b2.jpg" class="img-responsive" alt="" />
+                    </div>
+                    <div class="ins-righ">
+                        <h4>丹妮一发·陈格利安</h4>
+                        <p> 前设计院院花，直播界泥石流，不睡者，，斗鱼主机区的解放者</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="inst-top1">
+                    <div class="ins-lef">
+                        <img src="../jpg/b14.jpg" class="img-responsive" alt="" />
+                    </div>
+                    <div class="ins-righ">
+                        <h4>及时行乐</h4>
+                        <p>把握当下,及时行乐</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="inst-top2">
+                    <div class="ins-lef">
+                        <img src="../jpg/b12.jpg" class="img-responsive" alt="" />
+                    </div>
+                    <div class="ins-righ">
+                        <h4>克鲁格效应</h4>
+                        <p>倾向于高估自己的能力水平;无法认知他人真正的能力;无法认知且正视自身的不足 </p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-8 instru-right">
+                <div class="training">
+                    <div class="tra-left">
+                        <img src="../jpg/b8.jpg" class="img-responsive" alt="" />
+                    </div>
+                    <div class="tra-right">
+                        <h3>读书
+                        </h3>
+                        <h5>电影的口音 贾樟柯谈贾樟柯</h5>
+                        <p>本书是著名中国电影研究专家白睿文对贾樟柯电影的集中访谈，以年代为序，集中探讨了从《小山回家》《小武》到《江湖儿女》等10部重要的电影，也是贾导电影人生的梳理与总结。书中，贾樟柯亲述从汾阳走向世界背后的动人经历，分享每一部经典作品背后的传奇故事、创作缘起与理念；记录各个创作时期对电影的探索与思考，对于社会、现实的关怀和反思。</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="sructs">
+                    <h6>游记</h6>
+                    <li><img src="../jpg/b10.jpg" class="img-responsive" alt="" /></li>
+                    <li><img src="../jpg/b15.jpg" class="img-responsive" alt="" /></li>
+                    <li><img src="../jpg/b16.jpg" class="img-responsive" alt="" /></li>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- instructors -->
+    <!-- have -->
+    <div class="container">
+        <div class="have">
+            <h3>南京先锋书店于1996年在南京创立</h3>
+            <div class="col-md-4 have-left">
+
+                <p> 是国内知名的民营学术书店，自创立以来探索出一条以“学术、文化沙龙、咖啡、艺术画廊、电影、音乐、创意、生活、时尚”为主题的文化创意品牌书店经营模式，搭建一座可供开放、探讨、分享的公共性平台。其为读者打造的建筑之元素、宗教之情结、人文之关怀的书店阅读空间，吸引了众多国内外读者的聚集，使其成为南京重要的文化地标。</p>
+            </div>
+            <div class="col-md-4 have-middle">
+                <img src="../jpg/b9.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="col-md-4 have-left">
+                <h4>先锋书店</h4>
+                <ul>
+                    <li><a href="#"><span></span>先锋书店是南京的著名文化名片</a></li>
+                    <li><a href="#"><span></span>先锋书店被南京市民评为十二张文化名片之一 </a></li>
+                    <li><a href="#"><span></span>先锋书店被誉为“中国最美的书店”</a></li>
+                    <li><a href="#"><span></span>荣获“中国2009年度最美的书店奖” </a></li>
+                    <li><a href="#"><span></span>南京大学的学生亲切地称她为“南大第二图书馆 </a></li>
+                    <li><a href="#"><span></span>美国《国家地理》评选出全球十大书店</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>Copyright &copy; 2021.芥子 by八斗
+        </p>
+    </div>
+</body>
+
+</html>
