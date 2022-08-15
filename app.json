@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/me/me",
+    "pages/shouye/shouye",
+    "pages/introduction/introduction",
+    "pages/result/result"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#99FFFF",
+    "navigationBarTitleText": "counter树冠识别助手",
+    "navigationBarTextStyle":"black"
+  },
+
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#99FFFF",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/shouye/shouye",
+        "text": "首页",
+        "selectedIconPath": "assets/home2.png",
+        "iconPath": "assets/home1.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "个人",
+        "selectedIconPath": "assets/personal2.png",
+        "iconPath": "assets/personal1.png"
+
+      }
+    ]
+  }
+}

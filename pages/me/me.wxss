@@ -1,0 +1,58 @@
+.header{
+  height: 400rpx;
+  background: #99FFFF;
+}
+.loginout_btn{
+  font-size: 29rpx;
+  color: gray;
+  margin-top: 20rxp;
+}
+.root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.touxiang{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+/*用css画一个箭头*/
+.right_arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  position: absolute;
+  right:15px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.item{
+  display: flex;
+  padding: 25rpx;
+  background: white;
+  align-items: center;
+  border-bottom:1px solid rgb(240, 239, 239);
+}
+
+/*下面是关键去除边框*/
+.buttonstyle{
+  width: 100%;
+  background: white;
+  border:none;
+  text-align:left;
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.3;
+  font-size: 16px;
+}
+.buttonstyle::after{
+  border: none;
+  border-radius: 0;
+}
