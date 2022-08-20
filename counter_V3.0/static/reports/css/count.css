@@ -1,0 +1,206 @@
+      * {
+          padding: 0;
+          text-decoration: none;
+          margin: 0px 0px;
+          /* 到边框的距离 */
+      }
+
+      
+      body {
+          background: #ecf0f0ef;
+      }
+      
+      .menu a:hover {
+          color: rgb(14, 194, 218);
+      }
+
+      input#upload{
+        position: absolute;
+        top: 15px;
+        left: -50px;
+      }
+       
+          .shuoming{
+            position:absolute;
+            top:150px;
+            left: 350px;
+            text-align: left;
+            width:700px;
+            font-size:17px;
+            font-family: "楷体";
+
+          }
+       
+          h2.chuan2{
+            width: 416px;
+           height:28px;
+           color: darkgreen;
+           font-size: 19px;
+           letter-spacing:5px;
+          }
+           
+            .copyright{
+                position: absolute;
+                top: 1500px;
+            }
+           
+         
+            .dianji{
+                position:absolute;
+                top: 200px;
+                left: 420px;
+                text-align: center;
+            }
+            img{
+              width:600px;
+              position: absolute;
+              top: 285px;
+              left: 395px;
+            }
+           
+            .tuo{
+              position:absolute;
+              top:250px;
+
+            }
+          
+            .beijing{
+              width:650px;
+              height:420px;
+              background-color: aliceblue;
+              position:absolute;
+              top:265px;
+              left:370px;
+
+              border:2px solid dimgray;
+            }
+
+           
+    
+            .baogao{
+              position:absolute;
+              top: 300px;
+              left: 200px;
+            }
+          
+            h2.chuan2{
+              position: absolute;
+              top:-200px;
+              left: 150px;
+              width: 600px;
+              float: left;
+              font-size: 19px;
+            }
+           
+            .shuoming1{
+              position:absolute;
+              top:-150px;
+              left: 150px;
+              text-align: left;
+              width:800px;
+              font-size:17px;
+              font-family: "楷体";
+  
+            }
+         
+            .container{
+                position: absolute;
+                top:-110px;
+                left: 135px;
+              }
+            
+              #biaotou{
+                background-color: rgb(8, 143, 62);
+                width: 900px;
+                height: 70px;
+                font-size: 30px;
+                color: #DDDDDD;
+                font-weight: bold;
+                font-family: "楷体";
+              }
+            
+              #biao1{
+                background-color: rgb(223, 249, 226);
+              }
+              #biao2{
+                background-color: rgb(223, 249, 226);
+              }
+              #biao3{
+                background-color: rgb(223, 249, 226);
+              }
+              #biao4{
+                background-color: rgb(223, 249, 226);
+              }
+              #biao5{
+                background-color: white;
+              }
+              #biao6{
+                background-color: white;
+              }
+              #biao7{
+                background-color:white;
+              }
+              #biao8{
+                background-color: white;
+              }
+              #biao11{
+                background-color: white;
+              }
+           
+            table{
+          border-collapse:collapse;
+          border-color: #f9f9f9;
+          border-width: 1px;
+        }
+        
+            h4{
+              position: absolute;
+              top:700px;
+              left: 300px;
+              width: 600px;
+              float: left;
+            }
+          
+            h1.logo {
+               color: darkgreen;
+               font-size: 30px;
+               margin-top: 7px;
+                    }
+  
+         
+      .copyright {
+          width: 100%;
+          background: #232323;
+          text-align: center;
+          bottom: 0;
+          height: 100px;
+          padding-top: 15px;
+      }
+      
+      .copyright p {
+          color: #AFAFAF;
+          font-size: 0.9em;
+      }
+      
+      .copyright p a:hover {
+          text-decoration: underline;
+      }
+      
+      .fun {
+          width: 90%;
+          margin-top: 100px;
+          text-align: center;
+          height: 750px;
+      }
+      
+      .fun a {
+          color: #000;
+      }
+      
+      .fun td {
+          height: 60px;
+      }
+
+      a#tijiao{
+          color:white;
+      }

@@ -1,0 +1,7 @@
+gunicorn
+gevent
+absl-py==1.0.0
+Flask==2.2.2
+PyMySQL==1.0.2
+webencodings==0.5.1
+Flask-Mail
