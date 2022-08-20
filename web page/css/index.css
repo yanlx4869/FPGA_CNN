@@ -1,0 +1,150 @@
+body {
+    background: #ecf0f0ef;
+    /* 文字居中 */
+}
+
+* {
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    margin: 0px 0px;
+    /* 到边框的距离 */
+}
+
+a .menu a:hover {
+    color: rgb(14, 194, 218);
+}
+
+.all {
+    width: 100%;
+    height: 1600px;
+}
+
+.menu {
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0 auto;
+    z-index: 99999;
+    opacity: 1;
+    background-color: white;
+}
+
+.left {
+    height: 80px;
+    float: left;
+    margin-left: 50px;
+}
+
+.left ul li {
+    padding: 0px 20px;
+    float: left;
+    list-style: none;
+}
+
+.left ul li a {
+    text-decoration: none;
+    color: rgb(35, 37, 39);
+    font-size: 25px;
+    line-height: 80px;
+    width: 140px;
+    font-family: STXingkai;
+}
+
+.right {
+    height: 80px;
+    float: right;
+    margin: 80px;
+    display: flex;
+    margin-top: 25px;
+}
+
+.right ul li {
+    padding: 0px 15px;
+    float: right;
+    list-style: none;
+}
+
+.right a {
+    text-decoration: none;
+    color: rgb(35, 37, 39);
+    font-size: 20px;
+    width: 80px;
+}
+
+.right input {
+    float: left;
+    flex: 4;
+    height: 30px;
+    outline: none;
+    border: 1px solid rgb(40, 40, 40);
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.right button {
+    float: right;
+    flex: 1;
+    height: 30px;
+    width: 35px;
+    background-color: #282828;
+    color: white;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.right button i {
+    font-style: normal;
+}
+
+.right button:hover {
+    background-color: rgb(152, 231, 255);
+}
+
+#banner {
+    margin-top: 80px;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner .slide {
+    height: 400px;
+    width: 400%;
+}
+
+#banner .slide a {
+    display: inline-block;
+    height: 400px;
+    width: 25%;
+    float: left;
+}
+
+#banner .slide img {
+    height: 400px;
+    width: 100%;
+}
+
+.slick-dots {
+    position: absolute;
+    width: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    left: 50%;
+    bottom: 21px;
+    transform: translateX(-50%);
+}
+
+.slick-dots li label {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #DAE6FF;
+    border-radius: 5px;
+}
