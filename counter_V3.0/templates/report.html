@@ -46,9 +46,14 @@
         //加载文档对象
          window.onload=function () {
              var r_personal =document.getElementById("r_personal")
+             var r_analyse =document.getElementById("r_analyse")
               r_personal.onclick=function () {
 
                  window.location.href='/personal';
+             }
+             r_analyse.onclick=function () {
+
+                 window.location.href='/analyse';
              }
 
          }
@@ -77,7 +82,7 @@
                 <ul class="siderbar_menu">
                     <li class="active">
                         <a href="#">
-                            <div class="title">数据分析</div>
+                            <div class="title" id="r_analyse">数据分析</div>
                         </a>
                     </li>
                     <li>
