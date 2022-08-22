@@ -77,11 +77,13 @@
                 </div>
                 <a href="/sign_up" id="signUp">立即注册</a>
                 <a href="/password" id="fpassword">忘记密码</a>
-               <!--  <a href="sign_up.html" id="signUp">立即注册</a>-->
-                <!-- <input type="submit" class="btn" id="signUp" value="注册"> -->
-                <!-- <input type="button" class=value="找回密码" onClick="location.href='password.html'"> -->
                 <input type="submit" class="btn" value="登录" >
             </form>
+            {% if status == "error" %}
+	            <script>
+		            alert("用户名或密码错误")
+	            </script>
+            {% endif %}
         </div>
     </div>
     <script src="../static/sign_in/js/main.js"></script>

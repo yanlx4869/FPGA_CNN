@@ -74,13 +74,25 @@
                 <input type="password" name="password1" placeholder="密码">
                 <input type="password" name="password2" placeholder="确认密码">
                 <input type="email" name="email" id="emailAddress" placeholder="邮箱">
-                <button type="button" id="send_code">发送验证码</button>
+                <button type="button" id="send_code1">发送验证码</button>
                 <input type="text" name="security_code" placeholder="验证码">
                 <input type="submit" id="al_in" value="注册">
             </form>
 
+            
             <script>
-                $("#send_code").click(function () {
+                function settime($obj,time) {
+                    if (time == 0) {
+                        $obj.attr("disable",false);
+                        $obj.text("获取验证码");
+                    } else {
+                        $obj.attr("disable",true);
+                        $obj.text("重新发送（" + time + ")");
+                        time--;
+                    }
+                    setTimeout(function() { settime($obj, time)}, 1000)
+                }
+                $("#send_code1").click(function () {
                     var $this = $(this);
                     var a = this;
                     //alert("test1");
@@ -91,6 +103,10 @@
                         type:"post",
                         data:{"email":email},
                         success:function (messages) {
+                            alert(messages);
+                            var countDown = 10;
+                            settime($this, countDown);
+                            /* 旧方案
                             $this.off("click");
                             var countDown = 10;
                             var timer = setInterval(function(){
@@ -99,14 +115,14 @@
                                 
                                 } else {
                                     $this.text("获取验证码");
-                                    $this.on("click",function(){
-                                        alert("重新获取验证码");
-                                    });
+                                    
                                     clearInterval(timer);
                                 }
                                 countDown--   
                             },1000);
-                            alert(messages);
+                            $this.on("click",function(){
+                                        alert("重新获取验证码");
+                                    });*/
                         },
                         error:function () {
                             alert("Fail!");
@@ -114,6 +130,27 @@
                     })
                 });
             </script>
+            {% if status == "existed" %}
+                <script>
+                    alert("用户名已存在")
+                </script>
+            {% elif status == "ok" %}
+            <script>
+                alert("注册成功")
+            </script>
+            {% elif status == "error1" %}
+                <script>
+                    alert("验证码错误")
+                </script>
+            {% elif status == "error2" %}
+                <script>
+                    alert("输入密码不一致")
+                </script>
+            {% elif status == "failed" %}
+                <script>
+                    alert("Fail！ 注册失败！")
+                </script>
+            {% endif %}
         </div>
 
         <style>

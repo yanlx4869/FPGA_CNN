@@ -1,6 +1,8 @@
+import email
 from flask import Flask
 from flask import request
 from flask import render_template
+from flask import redirect
 import util
 # import tkinter.messagebox
 
@@ -8,7 +10,6 @@ import util
 import random
 from flask_mail import Mail, Message
 import redis
-
 
 app = Flask(__name__)
 # ylx add
@@ -70,7 +71,7 @@ def personal():
 
 
 #登录
-@app.route('/signIn', methods=['post'])
+@app.route('/signIn', methods=['post','get'])
 def show():
     # 获取用户提交过来的用户名和密码
     username = request.values.get('username')
@@ -86,12 +87,12 @@ def show():
         flag = False
 
     if flag:
-        print("登录成功！") 
+        # print("登录成功！") 
         return render_template("analyse.html")
     
     else:
-        print("登录失败！请先注册！") 
-        return render_template("sign_in.html")
+        # print("登录失败！请先注册！") 
+        return render_template("sign_in.html",status="error")
 
 
 # 注册
@@ -113,7 +114,7 @@ def show1():
         if username == user[1]:
             # 跳转页面
             flag = False
-            return "抱歉，该用户名已被注册"
+            return render_template("sign_up.html",status="existed")
             break
         else:
           flag = True
@@ -128,18 +129,18 @@ def show1():
                 # 提交事务
                 conn.commit()
                 if count > 0:
-                    return "恭喜，注册成功！"
+                    return render_template("sign_up.html",status="ok")
                 else:
-                    return "抱歉，注册失败。"
+                    return render_template("sign_up.html",status="failed")
             else:
-                return "验证码错误"
+                return render_template("sign_up.html",status="error1")
         else:
-            return "两次密码不相同，请重新输入密码"
+            return render_template("sign_up.html",status="error2")
 
     conn.close()
     cursor.close()
 
-# 发送邮件
+# 发送邮件 ajax
 @app.route('/sendEmail', methods=['get', 'post'])
 def send_email():
     email = request.values.get("email")
@@ -151,7 +152,7 @@ def send_email():
     captcha = ''.join(random.sample(['z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k','j','i','h','g','f','e','d','c','b','a'], 6))
     message = Message(
         subject="Counter树冠识别系统验证码",
-        recipients=['3599153691@qq.com'], 
+        recipients=[email], 
         body="您的验证码是：%s" % captcha
     )
     print(captcha)
@@ -168,36 +169,43 @@ def update_info():
     username = request.values.get("username")
     password1 = request.values.get("password1")
     password2 = request.values.get("password2")
-    # number=int(cursor.lastrowid)
-    # result = cursor.fetchall()
-    # for i in range(number):
-    #     for user in result:
-    #         sql="select * from user where id is %s"
-    #         if username == cursor.execute(sql,i):
+    email = request.values.get("email")
+    security_code = request.values.get("security_code")
+
+
     #查询该用户是否注册
     result = util.find_user()
     for user in result:
-        if username == user[1]:
+        if (username == user[1]) and (email == user[3]):
             # 跳转页面
             flag = True
             break
         else:
              flag = False
-             return "抱歉，该用户尚未注册。"
+             # return "用户名或邮箱错误"
+             return render_template("password.html",status="error")
+    
 
     if flag:
      # 执行修改操作
       if password2 == password1:
-        sql = "update user set password = %s where username = %s"
-        count = cursor.execute(sql, [password1, username])
-         # 提交事务
-        conn.commit()
-        if count > 0:
-          return "修改成功！"
+        if r.get('scode') == security_code:
+            sql = "update user set password = %s where username = %s"
+            count = cursor.execute(sql, [password1, username])
+             # 提交事务
+            conn.commit()
+            if count > 0:
+              # return "修改成功！"
+              return render_template("password.html",status="ok")
+            else:
+              # print("修改失败！")
+              return render_template("password.html",status="failed")
         else:
-         print("修改失败！")
+            # return "验证码错误"
+            return render_template("password.html",status="error1")
       else:
-          return "两次密码不相同，请重新输入密码"
+          # return "两次密码不相同，请重新输入密码"
+          return render_template("password.html",status="error2")
 
     # 释放资源
     conn.close()

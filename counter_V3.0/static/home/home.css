@@ -53,13 +53,14 @@ transition: color .4s;
 }
 .body-text{
   font-size: 25px;
-  width: 36%;
-  margin-left: 50%;
+  width: 50%;
+  margin-left: 40%;
   margin-top: 2%;
   position: absolute;
   top: 200px;
   left:-250px;
   color: white;
+  white-space: "nowrap";
 }
 .mail{
   background-color:white;
@@ -100,18 +101,19 @@ img#f1{
 h6#f11{
   position:absolute;
   top: 100px;
-  left:-245px;
+  left:-350px;
   color:#38d39f;
   font-size: 16px;
   font-weight: 5px;
   letter-spacing: 2px;
+  width:400px;
 }
 img#f2{
   width: 80px;
   height: 80px;
   position:absolute;
   top: 0px;
-  left:70px;
+  left:140px;
 }
 h6#f21{
   position:absolute;
@@ -121,14 +123,14 @@ h6#f21{
   font-size: 16px;
   font-weight: 5px;
   letter-spacing: 2px;
-  width:100px;
+  width:300px;
 }
 img#f3{
   width: 80px;
   height: 80px;
   position:absolute;
   top: 0px;
-  left:420px;
+  left:500px;
 }
 h6#f31{
   position:absolute;
@@ -138,5 +140,5 @@ h6#f31{
   font-size: 16px;
   font-weight: 5px;
   letter-spacing: 2px;
-  width:100px;
+  width:300px;
 }

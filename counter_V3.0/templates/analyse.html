@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>数据上传</title>
+    <title>counter树冠识别系统</title>
     <link rel="stylesheet" type="text/css" href="">
     <link rel="stylesheet" href="../static/reports/css/count.css" type="text/css">
     <link rel="stylesheet" href="../static/reports/css/bootstrap.min.css">
@@ -16,7 +16,7 @@
     <script src="../static/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
-     <style type="text/css">
+    <style type="text/css">
       #area{width:40%;height: 150px; line-height: 150px; text-align: center; border: 1px solid #DDDDDD; position:absolute; top: 50px;left:250px;}
       #prev{width:500px;min-height: 150px;   position: absolute; top:470px;left:410px; }
       #prev{
@@ -24,22 +24,23 @@
         top:-755px;
         left:-270px;
       }
-  </style>
+    </style>
   <style>
-      h1.chuan1{
-           position: absolute;
-           top:100px;
-           left: 350px;
-           float: left;
-           width: 416px;
-           height:28px;
-           color: darkgreen;
-           font-size: 20px;
-           letter-spacing:5px;
-        }
-        </style>
-        <style type="text/css">
-          .tijiao{
+    h1.chuan1{
+      position: absolute;
+      top:100px;
+      left: 350px;
+      float: left;
+      width: 416px;
+      height:28px;
+      color: darkgreen;
+      font-size: 20px;
+      letter-spacing:5px;
+    }  
+  </style>
+
+  <style type="text/css">
+    .tijiao{
               background-color: #4caf50;
               border:none;
               color: #fff;
@@ -51,31 +52,33 @@
               position:absolute;
               top:700px;
               left:870px;
-            }
-            </style>
-    <script>
+    }
+  </style>
+
+  <script>
         //加载文档对象
-         window.onload=function () {
-             var r_personal =document.getElementById("r_personal")
-             var r_report =document.getElementById("r_report")
-             r_personal.onclick=function () {
+        window.onload=function () {
+             var a_personal =document.getElementById("a_personal")
+             var a_report =document.getElementById("a_report")
+             a_personal.onclick=function () {
                  window.location.href='/personal';
              }
-             r_report.onclick=function () {
+             a_report.onclick=function () {
                  window.location.href='/report';
              }
-
-         }
-    </script>
-
-
+        }
+  </script>
 
 <!-- 表头 -->
 <title>数据分析</title>
 
 </head>
 
+
+
+
 <body>
+        <!--侧边导航栏-->  
         <div class="sidebar">
             <div class="bg_shadow"></div>
             <div class="sidebar_inner">
@@ -84,28 +87,28 @@
                 </div>
                 <div class="profile_info">
                     <div class="profile_data">
-                        <p class="name">用户名</p>
+                        <p class="name">CNNT</p>
                     </div>
                 </div>
 
                 <ul class="siderbar_menu">
-
                     <li class="active">
                         <a href="#">
                             <div class="title">数据分析</div>
                         </a>
                     </li>
                     <li>
-                        <a href="#"id="a_personal">
+                        <a href="/personal"id="a_personal">
                             <div class="title">个人中心</div>
                         </a>
                     </li>
                 </ul>
                 <div class="logout_btn">
-                    <a href="#">退出登录</a>
+                    <a href="/sign_in">退出登录</a>
                 </div>
             </div>
         </div>
+
 
         <div class="main_container">
             <div class="navbar">
@@ -276,8 +279,8 @@
     </div>
     </div>
     </div>
-                 <div class="tijiao" id="r_report">
-                    <a href="#" id="tijiao">提交照片</a>
+                 <div class="tijiao" id="a_report">
+                    <a href="/report" id="tijiao">提交照片</a>
                 </div>
     <script src="../static/reports/js/index.js"></script>
             </div>

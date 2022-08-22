@@ -8,6 +8,7 @@ def get_conn():
         user="root", password="yanlx4869@CNN.FPGA",
         database="Web_CNN", charset="utf8"
     )
+    # 本地连数据库用39.106.70.54、docker上连数据库用localhost(net==host)
     cursor = conn.cursor()
     # 返回数据库连接和cursor
     return conn, cursor
