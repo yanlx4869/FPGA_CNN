@@ -1,10 +1,32 @@
 {
   "pages":[
+    
     "pages/me/me",
     "pages/shouye/shouye",
     "pages/introduction/introduction",
-    "pages/result/result"
+    "pages/give/give"
+    
+
   ],
+  "usingComponents": {
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-share-sheet": "@vant/weapp/share-sheet/index",
+    "van-steps": "@vant/weapp/steps/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-switch-cell": "@vant/weapp/swipe-cell/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index"
+},
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#99FFFF",
