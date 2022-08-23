@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../static/jquery-3.4.1.min.js"></script>
+<style>
+    h2{
+        position: absolute;
+        top: 140px;
+        right: 2;
+    }
+</style>
+<style>
+    h1{
+        font-size:larger;
+        color: black;
+
+        position: absolute;
+        top: 50px;
+    }
+</style>
+<script>
+        //加载文档对象
+         window.onload=function () {
+             var signIn= f=document.getElementById("signIn")
+             var al_in= f=document.getElementById("al_in")
+             signIn.onclick=function () {
+
+                 window.location.href='/sign_in';
+             }
+         /*al_in.onclick=function () {
+                 alert("注册成功")
+
+        }*/
+         }
+
+    </script>
+
+<script>
+    function PostData() {
+        $.ajax({
+            type: "POST",
+            url: "post.go",
+            data : "",
+            success: function(msg) {
+            }
+        });
+        return false;
+    }
+</script>
+
+
+    <title>注册表单</title>
+    <link rel="stylesheet" href="../static/sign_up/style.css">
+    <link rel="stylesheet" href="../static/sign_up/iconfont/iconfont.css">
+    
+</head>
+
+<body>
+<html>
+
+
+    <div class="container" id="container">
+       
+        <div class="form-container sing-in-container">
+            <!-- 注册 -->
+
+            <form action="/signUp" method="post">
+
+                <h1>用户注册</h1>
+                <input type="text"  name="username" placeholder="用户名">
+                <input type="password" name="password1" placeholder="密码">
+                <input type="password" name="password2" placeholder="确认密码">
+                <input type="email" name="email" id="emailAddress" placeholder="邮箱">
+                <button type="button" id="send_code1">发送验证码</button>
+                <input type="text" name="security_code" placeholder="验证码">
+                <input type="submit" id="al_in" value="注册">
+            </form>
+
+            
+            <script>
+                function settime($obj,time) {
+                    if (time == 0) {
+                        $obj.attr("disable",false);
+                        $obj.text("获取验证码");
+                    } else {
+                        $obj.attr("disable",true);
+                        $obj.text("重新发送（" + time + ")");
+                        time--;
+                    }
+                    setTimeout(function() { settime($obj, time)}, 1000)
+                }
+                $("#send_code1").click(function () {
+                    var $this = $(this);
+                    var a = this;
+                    //alert("test1");
+                    email = $("#emailAddress").val();
+                    alert(email);
+                    $.ajax({
+                        url:"/sendEmail",
+                        type:"post",
+                        data:{"email":email},
+                        success:function (messages) {
+                            alert(messages);
+                            var countDown = 10;
+                            settime($this, countDown);
+                            /* 旧方案
+                            $this.off("click");
+                            var countDown = 10;
+                            var timer = setInterval(function(){
+                                if(countDown > 0) {
+                                    $this.text(countDown+"秒后重新获取");
+                                
+                                } else {
+                                    $this.text("获取验证码");
+                                    
+                                    clearInterval(timer);
+                                }
+                                countDown--   
+                            },1000);
+                            $this.on("click",function(){
+                                        alert("重新获取验证码");
+                                    });*/
+                        },
+                        error:function () {
+                            alert("Fail!");
+                        }
+                    })
+                });
+            </script>
+            {% if status == "existed" %}
+                <script>
+                    alert("用户名已存在")
+                </script>
+            {% elif status == "ok" %}
+            <script>
+                alert("注册成功")
+            </script>
+            {% elif status == "error1" %}
+                <script>
+                    alert("验证码错误")
+                </script>
+            {% elif status == "error2" %}
+                <script>
+                    alert("输入密码不一致")
+                </script>
+            {% elif status == "failed" %}
+                <script>
+                    alert("Fail！ 注册失败！")
+                </script>
+            {% endif %}
+        </div>
+
+        <style>
+            h2{
+                color:darkgreen;
+                font-size:xx-large;
+                font-family:'楷体', Times, serif;
+                font-weight: bolder;
+            }
+        </style>
+        <!-- 侧边栏内容 -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-pannel overlay-right">
+                    <div class="img">
+                        <img src="../static/sign_up/img/logo.png" alt="logo"  width="156.4" height="105">
+                    </div>
+                    <h2>counter树冠识别系统</h2>
+                    <p>快去登录吧</p>
+                    <button class="ghost" id="signIn">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/sign_up/sign_up.js"></script>
+</body>
+</html>
