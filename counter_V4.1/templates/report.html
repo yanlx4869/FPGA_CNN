@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter树冠识别系统</title>
+    <link rel="stylesheet" href="../static/reports/css/report.css">
+    <link rel="stylesheet" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/reports/css/personal.css">
+    <link rel="stylesheet" href="../static/reports/css/style.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <!-- https://fontawesome.com/v5/icons/times?s=solid -->
+
+<!-- 表头 -->
+
+<link rel="stylesheet" href="../static/bootstrap.min.css">
+<script src="../static/jquery-3.4.1.min.js"></script>
+<script src="../static/bootstrap.min.js"></script>
+
+
+
+<!--    跳转-->
+<script>
+        //加载文档对象
+         window.onload=function () {
+             var r_personal =document.getElementById("r_personal")
+             var r_analyse =document.getElementById("r_analyse")
+              r_personal.onclick=function () {
+
+                 window.location.href='/personal';
+             }
+             r_analyse.onclick=function () {
+
+                 window.location.href='/analyse';
+             }
+
+         }
+
+    </script>
+
+<title>下载报告</title>
+
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <div class="sidebar">
+            <div class="bg_shadow"></div>
+            <div class="sidebar_inner">
+                <div class="close">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="profile_info">
+                    <div class="profile_data">
+                        <p class="name">CNNT</p>
+                    </div>
+                </div>
+
+                <ul class="siderbar_menu">
+                    <li class="active">
+                        <a href="#">
+                            <div class="title" id="r_analyse">数据分析</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="title" id="r_personal">个人中心</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="logout_btn">
+                    <a href="#">退出登录</a>
+                </div>
+            </div>
+        </div>
+        <div class="main_container">
+            <div class="navbar">
+
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <h3 id="headline">counter树冠识别系统</h3>
+                <!-- 搜索框 -->
+            <div class="search">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="search" placeholder="搜索">
+                    </div>
+                    <button type="submit" class="btn btn-default" id="definite" >确认</button>
+                  </form>
+            </div>
+
+
+                
+            </div>
+            <div class="content">               
+             <!-- 主要部分可写在这里 -->
+             <div class="main_content">
+                <h2 id="introduction1">此图片的数据报告如下：</h2>
+                <p id="introduction2">经过我们的识别，上传结果的具体信息如下，包括相关树种的树冠数量及图片</p>
+                <div>
+                    <div>
+                    <table class="table table-striped" id="report">
+                        <tr class="info">
+                            <tr class="info" id="table_first" align="center">
+                              <td colspan="2" id="table_title">树冠图片识别报告</td>
+                          </tr>
+                          <tr align="center" class="even">
+                              <td>树种</td>
+                              <td>数量</td>
+                
+                          </tr>
+                          <tr align="center" class="odd">
+                              <td>0001</td>
+                              <td>如花</td>
+                
+                          </tr>
+                          <tr align="center" class="even" > 
+                              <td>0002</td>
+                              <td>张三</td>
+                
+                          </tr>
+                          <tr align="center"  class="odd">
+                              <td>0003</td>
+                              <td>李四</td>
+                          </tr>
+                          <tr align="center"  class="even">
+                            <td>0004</td>
+                            <td>数量</td>
+                
+                        </tr>
+                        <tr align="center"  class="odd">
+                            <td>0005</td>
+                            <td>如花</td>
+                
+                        </tr>
+                        <tr align="center"  class="even">
+                            <td>0006</td>
+                            <td>张三</td>
+                
+                        </tr>
+                        <tr align="center" class="odd">
+                            <td>0007</td>
+                            <td>李四</td>
+                        </tr>
+                        <tr align="center" class="even">
+                          <td>0008</td>
+                          <td>李四</td>
+                      </tr>
+                    </table>
+                    </div>
+                    <h4>此处或许还有个图片</h4>
+                    <input name="download" type="button"  value="下载报告" id="download_report">
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+ 
+    <script src="../static/reports/js/index.js"></script>
+
+
+    
+  </body>
+  
+  </html>

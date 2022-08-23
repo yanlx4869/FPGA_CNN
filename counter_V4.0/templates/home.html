@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/home/home.css">
+  <link rel="stylesheet" href="ttps://fonts.gstatic.com">
+  <title>counter树冠识别系统</title>
+  <script>
+        //加载文档对象
+         window.onload=function () {
+             var signin =document.getElementById("signin")
+              signin.onclick=function () {
+                 window.location.href='/sign_in';
+             }
+
+         }
+
+    </script>
+</head>
+<body>
+  <section>
+    <div class="top">
+    <img src="../static/home/img/back.jpg" style="width:1350px; height: 600px;" >
+  </div>
+    <h3 class="main-text">Counter树冠识别系统</h3>
+    <p class="body-text">Counter——来自BJFU的CNNT团队打造无人机林地遥感影像识别系统</p>
+    <button class="mail" id="signin">登录</button>
+  </section>
+
+  <div class="bottom">
+    <img src="../static/home/img/back2.jpg" style="width:1350px; height: 300px;" >
+  </div>
+  <div class="function">
+    <img src="../static/home/img/1.png" id="f1">
+    <h6 id="f11">基于卷积神经网络的单木冠幅分割模型</h6>
+    <img src="../static/home/img/2.png" id="f2">
+    <h6 id="f21">上传遥感影像图片在线识别</h6>
+    <img src="../static/home/img/3.png" id="f3">
+    <h6 id="f31">在线生成分析报告可供下载</h6>
+  </div>
+</body>
+</html>
