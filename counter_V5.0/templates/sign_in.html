@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    h7{
+        color:darkgreen;
+        font-size:xx-large;
+        font-family:'楷体', Times, serif;
+        font-weight: bolder;
+    }
+</style>
+
+<style>
+    b{
+        color:grey ;
+        top: 0px;
+        text-align:center;
+    }
+</style>
+
+<script>
+        //加载文档对象
+         window.onload=function () {
+             var signUp =document.getElementById("signUp")
+             var fpassword =document.getElementById("fpassword")
+             signUp.onclick=function () {
+
+                 window.location.href='/sign_up';
+             }
+             fpassword.onclick=function () {
+
+                 window.location.href='/password';
+             }
+         }
+
+    </script>
+    <title>登录表单</title>
+    <link rel="stylesheet" href="../static/sign_in/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    
+      <img src="../static/sign_in/img/bg.svg" width="50" height="50"/>
+      <h7>counter树冠识别系统</h7>
+
+    <img src="../static/sign_in/img/wave.png" class="wave">
+    <div class="container">
+        <div class="img">
+            <img src="../static/sign_in/img/logo.png" alt="">
+        </div>
+        <div class="login-content">
+            <form action="/signIn" method="post">
+                <img src="../static/sign_in/img/avatar.svg" alt="">
+                <h2 class="title">欢迎</h2>
+                <div class="input-div one">
+                    <div class="i">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="div">
+                        <h5>用户名</h5>
+                        <input type="text" class="input" name="username">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>密码</h5>
+                        <input type="password" class="input" name="password">
+                    </div>
+                </div>
+                <a href="/sign_up" id="signUp">立即注册</a>
+                <a href="/password" id="fpassword">忘记密码</a>
+                <input type="submit" class="btn" value="登录" >
+            </form>
+            {% if status == "error" %}
+	            <script>
+		            alert("用户名或密码错误");
+	            </script>
+            {% elif status == "failed" %}
+            <script>
+                alert("sys wrong(cookies)");
+            </script>
+            {% endif %}
+        </div>
+    </div>
+    <script src="../static/sign_in/js/main.js"></script>
+</body>
+</html>
